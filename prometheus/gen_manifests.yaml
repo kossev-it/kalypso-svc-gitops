@@ -5,10 +5,10 @@ kind: ServiceAccount
 metadata:
   name: prometheus-alertmanager
   labels:
-    helm.sh/chart: alertmanager-0.22.2
+    helm.sh/chart: alertmanager-0.24.1
     app.kubernetes.io/name: alertmanager
     app.kubernetes.io/instance: prometheus
-    app.kubernetes.io/version: "v0.24.0"
+    app.kubernetes.io/version: "v0.25.0"
     app.kubernetes.io/managed-by: Helm
 ---
 # Source: prometheus/charts/prometheus-node-exporter/templates/serviceaccount.yaml
@@ -17,7 +17,7 @@ kind: ServiceAccount
 metadata:
   name: prometheus-prometheus-node-exporter
   labels:
-    helm.sh/chart: prometheus-node-exporter-4.8.0
+    helm.sh/chart: prometheus-node-exporter-4.8.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: metrics
     app.kubernetes.io/part-of: prometheus-node-exporter
@@ -30,7 +30,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   labels:
-    helm.sh/chart: prometheus-pushgateway-2.0.2
+    helm.sh/chart: prometheus-pushgateway-2.0.3
     app.kubernetes.io/name: prometheus-pushgateway
     app.kubernetes.io/instance: prometheus
     app.kubernetes.io/version: "v1.5.1"
@@ -45,7 +45,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.0.2
+    chart: prometheus-19.1.0
     heritage: Helm
   name: prometheus-server
   annotations:
@@ -57,10 +57,10 @@ kind: ConfigMap
 metadata:
   name: prometheus-alertmanager
   labels:
-    helm.sh/chart: alertmanager-0.22.2
+    helm.sh/chart: alertmanager-0.24.1
     app.kubernetes.io/name: alertmanager
     app.kubernetes.io/instance: prometheus
-    app.kubernetes.io/version: "v0.24.0"
+    app.kubernetes.io/version: "v0.25.0"
     app.kubernetes.io/managed-by: Helm
 data:
   alertmanager.yml: |
@@ -83,7 +83,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.0.2
+    chart: prometheus-19.1.0
     heritage: Helm
   name: prometheus-server
 data:
@@ -413,7 +413,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.0.2
+    chart: prometheus-19.1.0
     heritage: Helm
   name: prometheus-server
 spec:
@@ -429,10 +429,10 @@ kind: Service
 metadata:
   name: prometheus-alertmanager
   labels:
-    helm.sh/chart: alertmanager-0.22.2
+    helm.sh/chart: alertmanager-0.24.1
     app.kubernetes.io/name: alertmanager
     app.kubernetes.io/instance: prometheus
-    app.kubernetes.io/version: "v0.24.0"
+    app.kubernetes.io/version: "v0.25.0"
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
@@ -451,10 +451,10 @@ kind: Service
 metadata:
   name: prometheus-alertmanager-headless
   labels:
-    helm.sh/chart: alertmanager-0.22.2
+    helm.sh/chart: alertmanager-0.24.1
     app.kubernetes.io/name: alertmanager
     app.kubernetes.io/instance: prometheus
-    app.kubernetes.io/version: "v0.24.0"
+    app.kubernetes.io/version: "v0.25.0"
     app.kubernetes.io/managed-by: Helm
 spec:
   clusterIP: None
@@ -473,7 +473,7 @@ kind: Service
 metadata:
   name: prometheus-prometheus-node-exporter
   labels:
-    helm.sh/chart: prometheus-node-exporter-4.8.0
+    helm.sh/chart: prometheus-node-exporter-4.8.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: metrics
     app.kubernetes.io/part-of: prometheus-node-exporter
@@ -500,7 +500,7 @@ metadata:
   annotations:
     prometheus.io/probe: pushgateway
   labels:
-    helm.sh/chart: prometheus-pushgateway-2.0.2
+    helm.sh/chart: prometheus-pushgateway-2.0.3
     app.kubernetes.io/name: prometheus-pushgateway
     app.kubernetes.io/instance: prometheus
     app.kubernetes.io/version: "v1.5.1"
@@ -525,7 +525,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.0.2
+    chart: prometheus-19.1.0
     heritage: Helm
   name: prometheus-server
 spec:
@@ -547,7 +547,7 @@ kind: DaemonSet
 metadata:
   name: prometheus-prometheus-node-exporter
   labels:
-    helm.sh/chart: prometheus-node-exporter-4.8.0
+    helm.sh/chart: prometheus-node-exporter-4.8.1
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: metrics
     app.kubernetes.io/part-of: prometheus-node-exporter
@@ -568,7 +568,7 @@ spec:
       annotations:
         cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
       labels:
-        helm.sh/chart: prometheus-node-exporter-4.8.0
+        helm.sh/chart: prometheus-node-exporter-4.8.1
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: metrics
         app.kubernetes.io/part-of: prometheus-node-exporter
@@ -655,7 +655,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    helm.sh/chart: prometheus-pushgateway-2.0.2
+    helm.sh/chart: prometheus-pushgateway-2.0.3
     app.kubernetes.io/name: prometheus-pushgateway
     app.kubernetes.io/instance: prometheus
     app.kubernetes.io/version: "v1.5.1"
@@ -672,7 +672,7 @@ spec:
   template:
     metadata:
       labels:
-        helm.sh/chart: prometheus-pushgateway-2.0.2
+        helm.sh/chart: prometheus-pushgateway-2.0.3
         app.kubernetes.io/name: prometheus-pushgateway
         app.kubernetes.io/instance: prometheus
         app.kubernetes.io/version: "v1.5.1"
@@ -719,7 +719,7 @@ metadata:
     component: "server"
     app: prometheus
     release: prometheus
-    chart: prometheus-19.0.2
+    chart: prometheus-19.1.0
     heritage: Helm
   name: prometheus-server
 spec:
@@ -738,7 +738,7 @@ spec:
         component: "server"
         app: prometheus
         release: prometheus
-        chart: prometheus-19.0.2
+        chart: prometheus-19.1.0
         heritage: Helm
     spec:
       enableServiceLinks: true
@@ -758,7 +758,7 @@ spec:
               readOnly: true
 
         - name: prometheus-server
-          image: "quay.io/prometheus/prometheus:v2.40.5"
+          image: "quay.io/prometheus/prometheus:v2.41.0"
           imagePullPolicy: "IfNotPresent"
           args:
             - --storage.tsdb.retention.time=15d
@@ -818,10 +818,10 @@ kind: StatefulSet
 metadata:
   name: prometheus-alertmanager
   labels:
-    helm.sh/chart: alertmanager-0.22.2
+    helm.sh/chart: alertmanager-0.24.1
     app.kubernetes.io/name: alertmanager
     app.kubernetes.io/instance: prometheus
-    app.kubernetes.io/version: "v0.24.0"
+    app.kubernetes.io/version: "v0.25.0"
     app.kubernetes.io/managed-by: Helm
 spec:
   replicas: 1
@@ -836,7 +836,7 @@ spec:
         app.kubernetes.io/name: alertmanager
         app.kubernetes.io/instance: prometheus
       annotations:
-        checksum/config: d22f3c67cff89938da2f783e00040109619b87e969186bf3b190d32dc540202c
+        checksum/config: ced84d68ee7dbe9883806fcb8f3ab1422308d4561410b9e8733db1c2d793e9d9
     spec:
       serviceAccountName: prometheus-alertmanager
       securityContext:
@@ -850,7 +850,7 @@ spec:
             runAsGroup: 65534
             runAsNonRoot: true
             runAsUser: 65534
-          image: "quay.io/prometheus/alertmanager:v0.24.0"
+          image: "quay.io/prometheus/alertmanager:v0.25.0"
           imagePullPolicy: IfNotPresent
           env:
             - name: POD_IP
@@ -900,10 +900,10 @@ kind: Pod
 metadata:
   name: "prometheus-alertmanager-test-connection"
   labels:
-    helm.sh/chart: alertmanager-0.22.2
+    helm.sh/chart: alertmanager-0.24.1
     app.kubernetes.io/name: alertmanager
     app.kubernetes.io/instance: prometheus
-    app.kubernetes.io/version: "v0.24.0"
+    app.kubernetes.io/version: "v0.25.0"
     app.kubernetes.io/managed-by: Helm
   annotations:
     "helm.sh/hook": test-success
